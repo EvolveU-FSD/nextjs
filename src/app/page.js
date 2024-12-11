@@ -13,6 +13,7 @@ export default function Home() {
       <p>Timestamp: {new Date().toLocaleTimeString()}</p> 
       {/* The above timestamp is to show the difference between SSG vs SSR (running as dev vs running off build) */}
       <CheckTipOfTheDay/>
+      {/* The above component is to show how to create your own API routes */}
     </>
   );
 }

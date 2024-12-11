@@ -5,12 +5,13 @@ const TodoPage = async () => {
         {next: {revalidate: 30}} //static values are repopulated every 30 seconds
     )
     const todoList= await response.json()
+    console.log("todos: ", todoList);
     //NOTE: no useState needed here! YAY!!
     return (
         <>
             <div>TODO Page</div>
             <ul>
-                {todoList.map(todo => <li key={todo.id}>{todo.title}:</li>)}
+                {todoList.map(todo => <li key={todo.id}>Task Name: {todo.title} Status:{(todo.completed)?"done":"To Do"}</li>)}
             </ul>
         </>
     )
